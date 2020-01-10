@@ -10,6 +10,7 @@ public class TestConnection {
 		try (Connection con = 
 				DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "hr", "hr")) {
 			System.out.println("Connected Using Thin Driver");
+			System.out.println(con.getClass());
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
