@@ -26,4 +26,7 @@ Servers/
 
 # custom folder and files to be ignored 
 .metadata/
+webdemo/.settings/
+webdemo/.project/
+
 upload.bat
