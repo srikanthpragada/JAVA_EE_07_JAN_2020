@@ -14,8 +14,8 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
 
-@WebFilter(dispatcherTypes = {DispatcherType.REQUEST }
-					, urlPatterns = { "/*" })
+// @WebFilter(dispatcherTypes = {DispatcherType.REQUEST }
+//					, urlPatterns = { "/*" })
 public class LogFilter implements Filter {
 	public void destroy() {
 	}
