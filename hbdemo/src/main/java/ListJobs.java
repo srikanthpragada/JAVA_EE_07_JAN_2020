@@ -7,7 +7,7 @@ import org.hibernate.query.Query;
 
 import entities.Job;
 
-public class ListJobs {
+public class ListJobs { 
 
 	public static void main(String[] args) throws Exception {
 		Configuration c = new Configuration();

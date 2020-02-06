@@ -5,7 +5,7 @@ import org.hibernate.cfg.Configuration;
 
 import entities.Job;
 
-public class DeleteJob {
+public class CacheDemo {
 	public static void main(String[] args) throws Exception {
 		Configuration c = new Configuration();
 		c.configure();
@@ -13,21 +13,10 @@ public class DeleteJob {
 		SessionFactory sf = c.buildSessionFactory();
 		Session s = sf.openSession();
 		
-		// System.out.println("Flush Mode : " + s.getFlushMode());
+		Job job = (Job) s.get(Job.class,  "SP_PROG");
+		job.setMinSal(5000);
 		
-		Transaction t = s.beginTransaction();
-		
-		Job job = (Job) s.get(Job.class,  "HB_PROG");
-		if (job == null)
-			System.out.println("Sorry! Job not found!");
-		else
-		{
-			// job is Persistent
-			s.delete(job);
-			// job is Removed
-		}
-		
-		t.commit(); // DELETE 
+		Job job2 = (Job) s.get(Job.class,  "SP_PROG");
 		s.close();
 		sf.close();
 	}

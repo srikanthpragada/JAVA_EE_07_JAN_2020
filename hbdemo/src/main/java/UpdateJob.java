@@ -19,9 +19,10 @@ public class UpdateJob {
 			System.out.println("Sorry! Job not found!");
 		else
 		{
+			// job is in Persistent
 			job.setTitle("Spring Boot Programmer");
 			job.setMinSal(10000);
-		    t.commit();
+		    t.commit();  // Update 
 		}
 		
         s.close();
