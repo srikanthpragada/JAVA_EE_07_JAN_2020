@@ -11,12 +11,13 @@ public class ListDept {
 	  
 	  EntityManagerFactory emf = Persistence.createEntityManagerFactory("oracle");
 	  EntityManager em = emf.createEntityManager();
-	  Query q = em.createQuery("select d from Department d");
-	  List<Department> depts = (List<Department>) q.getResultList(); 
+
+	  Query q = em.createQuery("select d from Dept d");
+	  List<Dept> depts = (List<Dept>) q.getResultList(); 
 	  
-	  for (Department d : depts) 
+	  for (Dept d : depts) 
 		  System.out.println(d.getName());
-	  
+
 	  em.close();
 	  emf.close();
 	  

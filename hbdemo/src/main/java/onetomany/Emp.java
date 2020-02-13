@@ -1,6 +1,6 @@
 package onetomany;
 
-public class Employee {
+public class Emp {
 	private int id;
 	private String name;
 	private Department department;

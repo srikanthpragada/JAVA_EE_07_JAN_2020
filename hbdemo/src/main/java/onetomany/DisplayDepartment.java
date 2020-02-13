@@ -16,7 +16,7 @@ public class DisplayDepartment {
 		Department d =  s.get(Department.class, 60);
 		System.out.println(d.getName());
 		
-		for (Employee e : d.getEmployees())
+		for (Emp e : d.getEmployees())
 			System.out.println(e.getName());
 		
 		s.close();

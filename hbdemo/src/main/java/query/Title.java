@@ -1,6 +1,6 @@
 package query;
 
-
+ 
 public class Title {
     private int id;
     private String title;

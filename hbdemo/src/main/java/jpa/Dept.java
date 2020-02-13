@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Departments")
-public class Department {
+public class Dept {
 	@Id
 	@Column(name = "department_id")
 	private int id;

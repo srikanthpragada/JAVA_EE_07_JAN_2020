@@ -13,7 +13,7 @@ public class ListEmployees {
 
 		SessionFactory sf = c.buildSessionFactory();
 		Session s = sf.openSession();
-		Employee e =  s.get(Employee.class, 101);
+		Emp e =  s.get(Emp.class, 101);
 		System.out.println(e.getName());
 		System.out.println(e.getDepartment().getName());
 		s.close();

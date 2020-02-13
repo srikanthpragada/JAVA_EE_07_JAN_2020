@@ -6,7 +6,7 @@ import java.util.Set;
 public class Department {
 	private int id;
 	private String name;
-	private Set<Employee> employees = new HashSet<Employee>();
+	private Set<Emp> employees = new HashSet<Emp>();
 	
 	public String getName() {
 		return name;
@@ -14,10 +14,10 @@ public class Department {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<Employee> getEmployees() {
+	public Set<Emp> getEmployees() {
 		return employees;
 	}
-	public void setEmployees(Set<Employee> employees) {
+	public void setEmployees(Set<Emp> employees) {
 		this.employees = employees;
 	}
 	public int getId() {
