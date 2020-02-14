@@ -1,17 +1,17 @@
-package com.st.springdemo;
+package ioc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-// @Component 
-// @Scope(scopeName="prototype")
+@Component 
+@Lazy
 public class JavaBooks implements Books {
 
 	public JavaBooks() {
-		// System.out.println("JavaBooks()");
+		System.out.println("JavaBooks()");
 	}
 	
 	@Override

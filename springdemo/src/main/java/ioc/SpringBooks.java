@@ -1,17 +1,15 @@
-package com.st.springdemo;
+package ioc;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component 
-// @Scope(scopeName="prototype")
+@Component(value="spring") 
 public class SpringBooks implements Books {
 
 	public SpringBooks() {
-		// System.out.println("SpringBooks()");
+		System.out.println("SpringBooks()");
 	}
 	
 	@Override
@@ -21,5 +19,4 @@ public class SpringBooks implements Books {
          books.add("Spring Data");
          return books;
 	}
-
 }

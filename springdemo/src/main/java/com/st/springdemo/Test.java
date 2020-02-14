@@ -10,12 +10,11 @@ public class Test  implements CommandLineRunner {
     Catalog cat;
     
 	public Test() {
-		System.out.println("Test()");
+		// System.out.println("Test()");
 	}
 
 	public void run(String... args) throws Exception {
 		cat.print(); 
-		cat.printUpper();
 	}
   
 }
