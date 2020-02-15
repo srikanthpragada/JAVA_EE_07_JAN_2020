@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component 
-@Lazy
+// @Lazy
 public class JavaBooks implements Books {
 
 	public JavaBooks() {

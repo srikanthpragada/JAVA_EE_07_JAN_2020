@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component;
 @Component 
 public class Catalog implements CommandLineRunner {
 	@Autowired
-	@Qualifier("spring")
+	// @Qualifier("spring")
 	private Books books;
+	@Autowired 
+	private Books techBooks; 
 
 	public Catalog() {
 		System.out.println("Catalog()");
