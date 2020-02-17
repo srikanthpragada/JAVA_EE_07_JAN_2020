@@ -10,19 +10,26 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LogAspect {
-
-	@Pointcut("execution (* print*(..))")
-	public void allPrintMethods() {
+	/*
+	@Pointcut("execution (* place*(..))")
+	public void allMethods() {
 
 	}
+    */
 	
-	@Before(value = "execution (* print(..))")
+	@Before(value = "execution (* place*(..))")
 	public void beforeAdviceMethod(JoinPoint jp) {
 		System.out.println("Before Advice --> " + jp.getSignature());
 	}
-
-	@After("allPrintMethods()")
+	
+	@After(value = "execution (* aop.Order.*(..))")
+	public void beforeAdvice(JoinPoint jp) {
+		System.out.println("After Advice 2 --> " + jp.getSignature());
+	}
+/*
+	@After("allMethods()")
 	public void afterAdviceMethod(JoinPoint jp) {
 		System.out.println("After Advice --> " + jp.getSignature());
 	}
+	*/
 }
