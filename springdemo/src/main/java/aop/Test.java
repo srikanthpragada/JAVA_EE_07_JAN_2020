@@ -14,6 +14,7 @@ public class Test  implements CommandLineRunner {
 		 System.out.println(order.getClass());
 	   	 order.placeOrder(); 
 	   	 order.cancelOrder();
+	   	 order.getOrderStatus(100);
 	}
 	
 	public static void main(String[] args) {
