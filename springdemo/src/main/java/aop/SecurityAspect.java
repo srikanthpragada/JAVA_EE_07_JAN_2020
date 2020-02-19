@@ -1,12 +1,12 @@
 package aop;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
-import org.springframework.stereotype.Component;
+import org.springframework.core.annotation.Order;
 
 // @Component
 // @Aspect 
+@Order(0)
 public class SecurityAspect {
 
 	@Before(value = "execution (* aop.Order.*(..))")
