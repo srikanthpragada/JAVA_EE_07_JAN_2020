@@ -10,9 +10,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class SJIDemo {
 	private SimpleJdbcInsert sji;
-
+	
+    // Constructor injection 
 	public SJIDemo(DataSource datasource) {
-		this.sji = new SimpleJdbcInsert(datasource).withTableName("jobs");
+		this.sji = new SimpleJdbcInsert(datasource);
+		this.sji.withTableName("jobs");
 	}
 
 	public void add() {

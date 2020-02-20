@@ -16,6 +16,10 @@ import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 @Component
 public class JobsManager implements CommandLineRunner {
+	
+	@Autowired
+	SJIDemo sjiDemo;
+	
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -24,28 +28,26 @@ public class JobsManager implements CommandLineRunner {
 		System.out.println("Count = " + count);
 	}
 
-	public void listJobs() {
-		List<Job> jobs = jdbcTemplate.query("select * from jobs", new RowMapper<Job>() {
-			@Override
-			public Job mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Job j = new Job();
-				j.setId(rs.getString("job_id"));
-				j.setTitle(rs.getString("job_title"));
-				return j;
-			}
-		});
+	public void listJobsWith7() {
+		List<Job> jobs = jdbcTemplate.query("select * from jobs", 
+			new RowMapper<Job>() {
+		    	@Override
+			    public Job mapRow(ResultSet rs, int rowNum) throws SQLException {
+				    return  new Job(rs.getString("job_id"),rs.getString("job_title"));
+			    }
+		    });
 
 		for (Job j : jobs)
 			System.out.println(j.getTitle());
 	}
 
-	public void listJobs2() {
+	public void listJobsWithLambda() {
 		List<Job> jobs = jdbcTemplate.query("select * from jobs",
 				// RowMapper is implemented using Lambda Expression
 				(rs, rowNum) -> new Job(rs.getString("job_id"), rs.getString("job_title")));
 
 		for (Job j : jobs)
-			System.out.println(j.getTitle());
+			System.out.printf("%-10s  %s\n",j.getId(), j.getTitle());
 	}
 
 	public void listJobTitles() {
@@ -104,11 +106,14 @@ public class JobsManager implements CommandLineRunner {
 
 	public void run(String... args) {
 		// showJobCount();
-		// listJobs();
+		// listJobsWithLambda();
 		// listJobs2();
-		listJobTitles();
-		listJobTitlesWithJava7();
+		// listJobTitles();
+		// listJobTitlesWithJava7();
 		// updateMinSalary();
+		// updateTwo(110,111);
+		
+		sjiDemo.add();
 	}
 
 }

@@ -5,13 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+// @SpringBootApplication
 public class TestJDBC implements CommandLineRunner {
 	@Autowired
 	JobsManager jobs;
 
-	@Autowired
-	SJIDemo sji;
+//	@Autowired
+//	SJIDemo sji;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestJDBC.class, args);
@@ -26,7 +26,7 @@ public class TestJDBC implements CommandLineRunner {
 
 		try {
 			System.out.println("Updating salaries!");
-			jobs.updateTwo(310, 111);
+			jobs.updateTwo(110, 111);
 			System.out.println("Operation Completed!");
 		} catch (Exception ex) {
 			System.out.println("Operation Failed");
