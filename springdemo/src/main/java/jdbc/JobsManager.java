@@ -111,9 +111,7 @@ public class JobsManager implements CommandLineRunner {
 		// listJobTitles();
 		// listJobTitlesWithJava7();
 		// updateMinSalary();
-		// updateTwo(110,111);
-		
-		sjiDemo.add();
+		// sjiDemo.add();
 	}
 
 }
