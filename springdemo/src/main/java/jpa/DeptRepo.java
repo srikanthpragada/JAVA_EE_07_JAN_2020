@@ -13,5 +13,5 @@ public interface DeptRepo extends CrudRepository<Department,Integer> {
 	@Query(value="select avg(length(department_name)) from departments", nativeQuery=true)
 	int  getAvgLength();
 	
-	
+	List<Department> getDepartmentsByLocation (int locationid);
 }
