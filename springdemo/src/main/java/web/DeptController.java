@@ -18,7 +18,7 @@ public class DeptController {
 	@Autowired
 	private DeptRepo depts;
 
-	@RequestMapping("/dept")
+	// @RequestMapping("/dept")
 	public String getDept(@RequestParam("id") int id, ModelMap model) {
 		Optional<Department> dept = depts.findById(id);
 		String msg;
@@ -38,14 +38,14 @@ public class DeptController {
 		return "deptlist";
 	}
 
-	@RequestMapping("/adddept")
+	//@RequestMapping("/adddept")
 	public String addDept(ModelMap model) {
 		Department d = new Department();
 		model.addAttribute("dept", d);
 		return "add_dept";
 	}
 
-	@RequestMapping(value = "/adddept", method = RequestMethod.POST)
+	//@RequestMapping(value = "/adddept", method = RequestMethod.POST)
 	public String addDept(@Valid Department d, Errors errors, ModelMap model) {
 
 		try {
@@ -64,7 +64,7 @@ public class DeptController {
 		}
 	}
 	
-	@RequestMapping("/deletedept/{id}")
+	//@RequestMapping("/deletedept/{id}")
 	public String deleteDept(@PathVariable("id") int id, ModelMap model) {
 		Optional<Department> dept = depts.findById(id);
 		if (dept.isPresent())
@@ -80,7 +80,7 @@ public class DeptController {
 	}
 	
 
-	@RequestMapping("/editdept/{id}")
+	//@RequestMapping("/editdept/{id}")
 	public String editDept(@PathVariable("id") int id, ModelMap model) {
 		Optional<Department> dept = depts.findById(id);
 		if (dept.isPresent())
@@ -91,7 +91,7 @@ public class DeptController {
 		return "edit_dept";
 	}
 
-	@RequestMapping(value = "/editdept/{id}", method = RequestMethod.POST)
+	//@RequestMapping(value = "/editdept/{id}", method = RequestMethod.POST)
 	public String updateDept(@PathVariable("id") int id, Department d, ModelMap model) {
 		try {
 			Optional<Department> dept = depts.findById(d.getId());

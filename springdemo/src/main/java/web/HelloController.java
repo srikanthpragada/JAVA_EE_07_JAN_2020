@@ -7,18 +7,18 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-// @Controller
+@Controller
 public class HelloController {
 
-//	@RequestMapping("/greet")
-//	public String greet(@RequestParam(name = "user") String user, ModelMap model) {
-//		model.put("user", user);
-//		model.put("now", LocalDateTime.now().toString());
-//		return "greet"; // greet.jsp
-//	}
-	
-	@RequestMapping("/welcome")
-	public String welcome() {
-		return "welcome"; // welcome.jsp
+	@RequestMapping("/hello")
+	public String greet(@RequestParam(name = "user",  required = false) String user, ModelMap model) {
+		if (user == null)  // if no parameter is passed
+			model.put("user","Guest");
+		else
+		    model.put("user", user);
+		
+		model.put("now", LocalDateTime.now().toString());
+		return "hello"; // hello.jsp
 	}
+	
 }

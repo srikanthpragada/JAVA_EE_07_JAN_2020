@@ -14,7 +14,7 @@ public class Department {
 	private int id;
 
 	@Column(name = "department_name")
-	@Size(min = 4,max=20, message = "Department name must be 4-20 chars")
+	// @Size(min = 4,max=20, message = "Department name must be 4-20 chars")
 	private String name;
 
 	public int getId() {
