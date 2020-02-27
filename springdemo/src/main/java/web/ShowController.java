@@ -1,17 +1,24 @@
 package web;
 
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
-// @Controller 
+@Controller
+@RequestMapping("/show")
 public class ShowController {
-	@RequestMapping("/show")
+	@RequestMapping("/session")
 	@ResponseBody
-	public String showName(HttpSession s) {
-			return (String) s.getAttribute("name");
-						
+	public String showName(@SessionAttribute("title") String title) {
+		return title;
+	}
+
+	@RequestMapping("/cookie")
+	@ResponseBody
+	public String showLastAccess(@CookieValue("lastaccess") String lastAccess) {
+		return lastAccess;
+
 	}
 }
